@@ -70,7 +70,7 @@
                         <span class="author-block">
                           <a href="https://www.cs.ox.ac.uk/people/andrew.markham/" target="_blank">Andrew Markham</a><sup>1</sup>,</span>
                           <span class="author-block">
-                            <a href="https://en.wikipedia.org/wiki/Niki_Trigoni" target="_blank">Niki Trigoni</a>,</span>
+                            <a href="https://en.wikipedia.org/wiki/Niki_Trigoni" target="_blank">Niki Trigoni</a><sup>1</sup>,</span>
                   </span>
                   </div>
 
@@ -117,7 +117,7 @@
                 </span>
 
                   <span class="link-block">
-                    <a href="https://github.com/dannymcy/zeroshot_task_hallucination_code" target="_blank"
+                    <a href="https://github.com/dannymcy/coopera_code" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -157,9 +157,10 @@
           </video> -->
       <!-- </video> -->
       <h2 class="subtitle has-text-centered">
-        <b>TL;DR:</b> We propose COOPERA, a modular plug-and-play framework that progressively enhances
-        VLM's 3D reasoning capabilities by prompting and interacting with 3D foundational models. COOPERA unlocks 3D-aware applications including (a) various forms of spatial VQA, (b)
-        robotics pick-and-stack, and (c) discovering and planning robotics task trajectories from a single image.
+        <b>TL;DR:</b> We introduce COOPERA, a novel framework for continual, open-ended human-robot assistance. 
+        COOPERA includes (1) simulated humans driven by psychological traits and long-term intentions,
+        (2) continuous human feedback that enables the study of long-term, open-ended human-robot collaboration, 
+        and (c) a benchmark and approach to personalize the robot's collaborative actions by learning human traits and context-dependent intentions.
       </h2>
     </div>
   </div>
@@ -176,16 +177,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Current state-of-the-art spatial reasoning-enhanced VLMs are trained to excel at
-            spatial visual question answering (VQA). However, we believe that higher-level
-            3D-aware tasks, such as articulating dynamic scene changes and motion planning,
-            require a fundamental and explicit 3D understanding beyond current spatial VQA
-            datasets. In this work, we present <b>COOPERA</b>, a framework designed to enhance
-            the <b>spatial</b> reasoning capabilities of VLMs through <b>p</b>rompting and <b>in</b>teracting
-            with priors from multiple 3D foundation models in a zero-shot, training-free
-            manner. Extensive experiments demonstrate that our spatial reasoning-imbued
-            VLM performs well on various forms of spatial VQA and can extend to help in
-            various downstream robotics tasks such as pick and stack and trajectory planning.            
+            To understand and collaborate with humans, robots must account for individual human traits, habits, and activities over time. 
+            However, most robotic assistants lack these abilities, as they primarily focus on predefined tasks in structured environments and 
+            lack a human model to learn from. This work introduces <b>COOPERA<b>, a novel framework for <b>CO</b>ntinual, 
+            <b>OP</b>en-</b>E</b>nded human-</b>R</b>obot </b>A</b>ssistance, where simulated humans, driven by psychological traits 
+            and long-term intentions, interact with robots in complex environments. By integrating continuous human feedback, our framework, 
+            for the first time, enables the study of long-term, open-ended human-robot collaboration (HRC) in different collaborative tasks 
+            across various time-scales. Within COOPERA, we introduce a benchmark and an approach to personalize the robot's collaborative actions 
+            by learning human traits and context-dependent intents. Experiments validate the realism of our simulated humans and demonstrate the value 
+            of inferring and personalizing to human intents for open-ended and long-term HRC.          
           </p>
         </div>
       </div>
@@ -198,7 +198,6 @@
 <!-- Image carousel -->
 
 <!-- End image carousel -->
-
 
 
 <!-- Youtube video -->
@@ -214,33 +213,13 @@
             <!-- Youtube embed code here -->
             <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
            -->
-           <img src="static/images/pipeline.jpg" alt="Method Overview"/>
-
-           <div class="content has-text-justified">
-            <p>
-              <b>Motivation:</b> Many works enhance VLMs' spatial reasoning by training/fine-tuning them on standard spatial VQA datasets, leading to surface-level associations between image-text-data triplets. Given the scarcity of spatially rich embodied data and high-quality 3D annotations, we hypothesize that VLMs may struggle to generalize beyond their dataset or adapt to more complex spatial tasks.
-            </p>
-          </div>
-
-          <div class="content has-text-justified">
-            <p>
-              <b>Key Insight:</b> Recent studies in image space understanding show that VLMs, with internet-scale language knowledge and multimodal foundation models, capture complementary information that enables new tasks across modalities without further training. With advances in 3D foundation models, we explore using 3D priors to enhance VLMs' higher-level spatial awareness.
-            </p>
-          </div>
+           <img src="static/images/pipeline.jpg" alt="Framework Overview"/>
 
            <div class="content has-text-justified">
              <p>
-              <b>Approach:</b> Our modular pipeline enhances VLMs' spatial understanding of an image through
-              progressive prompting and interactions with 2D/3D foundation models as "free lunch",
-              with scene decomposition, comprehension, and reconstruction processes.
-              <!-- For image scene understanding, we use VLM to describe objects by
-              appearance and 2D location, complemented by language-guided segmentation and repainting models
-              to obtain occlusion-free object masks. Elevating 2D understanding to coarse 3D, we use
-              metric depth estimation and perspective fields to estimate the 3D scene size and conduct perspective
-              canonicalization with VLM. For fine-grained 3D understanding, we partially reconstruct
-              the 3D scene, with the full 3D representation of foreground objects and the background as a plane.
-              With the reconstructed 3D scene, we summarize spatial information and prompt it to the VLM for
-              various downstream tasks. With the entire framework being fully modularized, each component can be easily replaced with the latest improvements within its specific domain.  -->
+              Within COOPERA, the LLM-powered human proposes
+              whole-day intentions and tasks, which are executed in the environment. As the robot observes the human actions, it predicts a set of
+              tasks to assist them. After each day, the human provides feedback to the robot, enabling the robot to improve for subsequent days.
              </p>
            </div>
           </div>
@@ -250,6 +229,73 @@
   </div>
 </section>
 <!-- End youtube video -->
+
+<!-- Youtube video -->
+<section class="hero is-small" style="margin-top: 25px; margin-bottom: 25px;">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3 has-text-centered">Human Simulation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <!-- <div class="publication-video"> -->
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           -->
+           <img src="static/images/pipeline.jpg" alt="Framework Overview"/>
+
+           <div class="content has-text-justified">
+             <p>
+              The human-LLM is seeded with an extended profile. At each time of day, the human proposes an intention and decomposes it into tasks, 
+              aligning with profile traits and temporal dependence on intention/task history.
+               LLM inputs are optimized with Memory Retrieval and Search, and robustness is enhanced via two rounds of Reflexion. 
+               This pipeline generates continuous, whole-day intentions and tasks executed in the environment with expressive whole-body motion.
+             </p>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Youtube video -->
+<section class="hero is-small" style="margin-top: 25px; margin-bottom: 25px;">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3 has-text-centered">Building an Assistive Agent</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <!-- <div class="publication-video"> -->
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           -->
+           <img src="static/images/pipeline.jpg" alt="Human Simulation"/>
+
+           <div class="content has-text-justified">
+             <p>
+              Our approach decouple robot task inference into two stages: first inferring intentions, then identifying specific tasks. 
+              By chaining VLM and classifier, the robot gradually filters and selects tasks that best correlate with the human's traits and 
+              temporal context. The robot keeps track of a human profile, inferred from collaboration history. 
+              This profile, combined with human feedback, optimizes the robot-VLM through prompting and the classifiers through supervised learning. 
+             </p>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+
+
 
 
 
