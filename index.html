@@ -222,9 +222,10 @@
 
            <div class="content has-text-justified">
              <p>
-              Within COOPERA, the LLM-powered human proposes
-              whole-day intentions and tasks, which are executed in the environment. As the robot observes the human actions, it predicts a set of
-              tasks to assist them. After each day, the human provides feedback to the robot, enabling the robot to improve for subsequent days.
+              Our goal is to enable the study of continual HRC in open-ended tasks. 
+              To that end, we investigate how a robotic agent can become more effective in assisting humans by learning from their behavior. 
+              Central to COOPERA are LLM-powered simulated humans driven by traits and long-term intentions that the robot can reason for effective collaboration, 
+              and a human feedback mechanism for improving collaboration over time.
              </p>
            </div>
           </div>
@@ -240,7 +241,7 @@
   <div class="hero-body">
     <div class="container">
       <!-- Paper video. -->
-      <h2 class="title is-3 has-text-centered">Human Simulation</h2>
+      <h2 class="title is-3 has-text-centered">Simulating Humans</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
 
@@ -252,10 +253,10 @@
 
            <div class="content has-text-justified">
              <p>
-              The human-LLM is seeded with an extended profile. At each time of day, the human proposes an intention and decomposes it into tasks, 
-              aligning with profile traits and temporal dependence on intention/task history.
-               LLM inputs are optimized with Memory Retrieval and Search, and robustness is enhanced via two rounds of Reflexion. 
-               This pipeline generates continuous, whole-day intentions and tasks executed in the environment with expressive whole-body motion.
+              We aim to model humans who interact in the environment over long periods of time, act driven by their goals, preferences, and context, 
+              and who can react and provide feedback as a robot assists them. To achieve this, 
+              we propose a hierarchical model that combines LLMs and 3D human motion to simulate long-term, 
+              realistic human behaviors in indoor environments.
              </p>
            </div>
           </div>
@@ -272,7 +273,7 @@
   <div class="hero-body">
     <div class="container">
       <!-- Paper video. -->
-      <h2 class="title is-3 has-text-centered">Building an Assistive Agent</h2>
+      <h2 class="title is-3 has-text-centered">Instantiating COOPERA with an Assistive Agent</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
 
@@ -284,10 +285,8 @@
 
            <div class="content has-text-justified">
              <p>
-              Our approach decouple robot task inference into two stages: first inferring intentions, then identifying specific tasks. 
-              By chaining VLM and classifier, the robot gradually filters and selects tasks that best correlate with the human's traits and 
-              temporal context. The robot keeps track of a human profile, inferred from collaboration history. 
-              This profile, combined with human feedback, optimizes the robot-VLM through prompting and the classifiers through supervised learning. 
+              To study COOPERA, we propose an approach for continual HRC, alongside benchmark methods. Our approach enables the robot to improve its assistive performance by learning
+              correlations between human intentions, tasks, traits, and temporal dependencies at each time of day. 
              </p>
            </div>
           </div>
